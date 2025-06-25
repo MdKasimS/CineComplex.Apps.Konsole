@@ -53,7 +53,7 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-                        HomeView.Instance.View();
+                        await HomeView.Instance.View();
                         break;
 
                     case 2:
