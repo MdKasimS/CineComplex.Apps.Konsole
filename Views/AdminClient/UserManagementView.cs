@@ -58,7 +58,7 @@ namespace CineComplex.Views.AdminClient
                         Instance.DisplayAllUsers();
                         break;
                     case 2:
-                        SignUpFormView.Instance.View();
+                        await SignUpFormView.Instance.View();
                         break;
                     case 3:
                         break;
