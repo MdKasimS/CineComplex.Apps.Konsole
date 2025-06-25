@@ -36,9 +36,25 @@ namespace CineComplex.ViewModels.AdminViewModels
 
         }
 
-        public async Task SignIn()
+        public async Task SignInCommand()
         {
-            AuthenticationResult = await AuthenticationService.AuthenticateUserForGivenCredential();
+            AuthenticationResult = AuthenticationService.AuthenticateUserForGivenCredential().Result;
+
+            if (AuthenticationResult.IsSuccessful)
+            {
+                Credential.Instance.IsSignedIn = true;
+            }
+        }
+
+        public async Task SignOutCommand()
+        {
+            await Task.Run(() =>
+            {
+                AuthenticationResult = AuthenticationService.TerminateUserSession(Credential.Instance.SessionTokenId);
+                ResetFormCommand();
+            });
+
+            //TODO: Use navigation state machine
         }
 
         public void ResetFormCommand()
@@ -67,5 +83,6 @@ namespace CineComplex.ViewModels.AdminViewModels
             }
             return true;
         }
+        
     }
 }
