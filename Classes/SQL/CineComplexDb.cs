@@ -47,7 +47,6 @@ namespace CineComplex.Classes.SQL
                 string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
 
                 optionsBuilder.UseSqlite($"Data Source={dbPath}");
-                //                .LogTo(Console.WriteLine, LogLevel.Information);
             }
         }
 
@@ -67,7 +66,7 @@ namespace CineComplex.Classes.SQL
 
                 entity.HasOne(e => e.AccountProfile)
                   .WithOne(up => up.UserAccount)
-                  .HasForeignKey<User>(up => up.Username)
+                  .HasForeignKey<User>(up => up.Id)
                   .OnDelete(DeleteBehavior.Cascade);
 
             });
