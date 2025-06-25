@@ -17,7 +17,7 @@ namespace CineComplex.Services
 
         public static async Task<Result<bool>> AuthenticateUserForGivenCredential()
         {
-            return await Task.Run(() =>
+            return await Task.Run(async () =>
             {
 
                 if (!Credential.Instance.LoginId.IsNullOrEmpty() && !Credential.Instance.Password.IsNullOrEmpty())
@@ -35,7 +35,7 @@ namespace CineComplex.Services
                             if (auth != null && auth.Password == Credential.Instance.Password)
                             {
 
-                                SessionService.LogSession(auth);
+                                await SessionService.LogSession(auth);
 
                                 Credential.Instance.LoggedInUser = User.GetUserByEmailId(Credential.Instance.LoginId);
                                 Credential.Instance.LoggedInUser.AccountProfile = UserProfile.GetUserProfileByUserId(Credential.Instance.LoggedInUser.Id);

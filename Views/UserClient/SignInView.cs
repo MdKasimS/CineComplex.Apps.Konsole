@@ -97,7 +97,7 @@ namespace CineComplex.Views.UserClient
                         break;
 
                     case 6:
-                        SignInViewModel.Instance.ResetFormCommand();
+                        await SignInViewModel.Instance.ResetFormCommand();
                         break;
 
                     default:

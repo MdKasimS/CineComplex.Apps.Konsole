@@ -30,7 +30,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             SignUpResult = User.IsValidUserRegistration(_newUser);
             if (SignUpResult.IsSuccessful)
             {
-                User.CreateNewUser(_newUser);
+                await User.CreateNewUser(_newUser);
 
                 SignUpResult.Message = "User Created Successful. Press Any Key To Continue...";
             }

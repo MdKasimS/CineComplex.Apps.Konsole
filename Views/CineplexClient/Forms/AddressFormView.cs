@@ -81,7 +81,7 @@ namespace CineComplex.Views.CineplexClient.Forms
 
                     case 5:
 
-                        Result<bool> result = SignUpFormViewModel.Instance.CreateUserCommand();
+                        Result<bool> result = await SignUpFormViewModel.Instance.CreateUserCommand();
                         Console.Write(result.Message);
                         Console.ReadKey();
 

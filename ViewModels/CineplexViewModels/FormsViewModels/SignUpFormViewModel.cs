@@ -24,7 +24,7 @@ namespace CineComplex.ViewModels.CineplexViewModels
 
         #region Commands
 
-        public Result<bool> CreateUserCommand()
+        public async Task<Result<bool>> CreateUserCommand()
         {
             User _newUser = new User();
             _newUser.Username = UserName;
@@ -35,7 +35,7 @@ namespace CineComplex.ViewModels.CineplexViewModels
             Result<bool> isValidRegistration = IsValidRegistration(_newUser);
             if (isValidRegistration.IsSuccessful)
             {
-                User.CreateNewUser(_newUser);
+                await User.CreateNewUser(_newUser);
                 
                 isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
                 return isValidRegistration;

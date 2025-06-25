@@ -37,19 +37,22 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newAddress.PinCode = PinCode;
             _newAddress.AccountProfile = Credential.Instance.LoggedInUser.AccountProfile;
             _newAddress.AccountProfileId = Credential.Instance.LoggedInUser.AccountProfile.Id;
-            Address.CreateNewAddress(_newAddress);
+            await Address.CreateNewAddress(_newAddress);
         }
 
         public async Task ResetFormCommand()
         {
-            BuildingDetails = null;
-            StreetName = null;
-            Area = null;
-            City = null;
-            State = null;
-            Country = null;
-            OtherDetails = null;
-            PinCode = null;
+            await Task.Run(() =>
+            {
+                BuildingDetails = "";
+                StreetName = "";
+                Area = "";
+                City = "";
+                State = "";
+                Country = "";
+                OtherDetails = "";
+                PinCode = "";
+            });
 
         }
 

@@ -70,7 +70,7 @@ namespace CineComplex.Views.UserClient
 
                 if (Choice == Instance.MenuList.Count)
                 {
-                    SignInViewModel.Instance.SignOutCommand();
+                    await SignInViewModel.Instance.SignOutCommand();
                 }
 
             } while (Choice != Instance.MenuList.Count);

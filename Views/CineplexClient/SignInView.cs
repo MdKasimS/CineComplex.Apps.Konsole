@@ -66,7 +66,7 @@ namespace CineComplex.Views.CineplexClient
                         await SignInViewModel.Instance.SignInCommand();
                         if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful)
                         {
-                            CineplexHomeView.Instance.View();
+                            await CineplexHomeView.Instance.View();
                         }
                         else
                         {
@@ -76,16 +76,16 @@ namespace CineComplex.Views.CineplexClient
                         break;
 
                     case 4:
-                        SignUpFormView.Instance.View();
+                        await SignUpFormView.Instance.View();
                         break;
 
                     case 5:
-                        ForgotPasswordFormView.Instance.View();
+                        await ForgotPasswordFormView.Instance.View();
                         Console.Clear();
                         break;
 
                     case 6:
-                        SignInViewModel.Instance.ResetFormCommand();
+                        await SignInViewModel.Instance.ResetFormCommand();
                         break;
 
                     default:

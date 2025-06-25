@@ -19,7 +19,10 @@ namespace CineComplex.Services
 
         public static async Task LogSession(Auth auth)
         {
-            Credential.Instance.UserSession = Session.CreateSession(auth);
+            await Task.Run(() =>
+            {
+                Credential.Instance.UserSession = Session.CreateSession(auth);
+            });
         }
 
     }
