@@ -24,23 +24,26 @@ namespace CineComplex.ViewModels.FormViewModels
 
         #region Commands
 
-        public Result<bool> CreateUserCommand()
+        public async Task<Result<bool>> CreateUserCommand()
         {
-            User _newUser = new User();
-            _newUser.Username = UserName;
-            _newUser.Password = Password;
-            _newUser.Email = Email;
-            _newUser.Contact = Contact;
-
-            Result<bool> isValidRegistration = IsValidRegistration(_newUser);
-            if (isValidRegistration.IsSuccessful)
+            return await Task.Run(async () =>
             {
-                User.CreateNewUser(_newUser);
-                
-                isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
+                User _newUser = new User();
+                _newUser.Username = UserName;
+                _newUser.Password = Password;
+                _newUser.Email = Email;
+                _newUser.Contact = Contact;
+
+                Result<bool> isValidRegistration = IsValidRegistration(_newUser);
+                if (isValidRegistration.IsSuccessful)
+                {
+                    await User.CreateNewUser(_newUser);
+
+                    isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
+                    return isValidRegistration;
+                }
                 return isValidRegistration;
-            }
-            return isValidRegistration;
+            });
         }
 
         private Result<bool> IsValidRegistration(User _newUser)

@@ -62,10 +62,10 @@ namespace CineComplex.Views.AdminClient
                         break;
 
                     case 3:
-                        await SignInViewModel.Instance.SignIn();
+                        await SignInViewModel.Instance.SignInCommand();
                         if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful)
                         {
-                            AdminHomeView.Instance.View();
+                            await AdminHomeView.Instance.View();
                         }
                         else
                         {
@@ -75,11 +75,11 @@ namespace CineComplex.Views.AdminClient
                         break;
 
                     case 4:
-                        SignUpFormView.Instance.View();
+                        await SignUpFormView.Instance.View();
                         break;
 
                     case 5:
-                        ForgotPasswordFormView.Instance.View();
+                        await ForgotPasswordFormView.Instance.View();
                         Console.Clear();
                         break;
 
