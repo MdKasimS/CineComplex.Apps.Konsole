@@ -63,13 +63,13 @@ namespace CineComplex.Views.AdminClient
 
                     case 3:
                         await SignInViewModel.Instance.SignInCommand();
-                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful)
+                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful && Credential.Instance.UserSession.Token != null)
                         {
                             await AdminHomeView.Instance.View();
                         }
                         else
                         {
-                            Console.Write($"{SignInViewModel.Instance.AuthenticationResult.Message}");
+                            Console.Write($"{SignInViewModel.Instance.AuthenticationResult.Message}" );
                             Console.ReadLine();
                         }
                         break;

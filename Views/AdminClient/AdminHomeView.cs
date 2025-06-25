@@ -79,7 +79,6 @@ namespace CineComplex.Views.AdminClient
                     case 8:
                         AdminHomeViewModel.Instance.SignOut();
                         SignInViewModel.Instance.ResetFormCommand();
-                        await HomeView.Instance.View();
                         break;
 
                     default:

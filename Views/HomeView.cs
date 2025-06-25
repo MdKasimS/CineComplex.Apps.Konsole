@@ -72,7 +72,7 @@ namespace CineComplex.Views
 
 
                     default:
-                        Console.WriteLine("Please enter the valid Choice .....");
+                        Console.WriteLine("Please enter the valid Choice 2 .....");
                         break;
                 }
             } while (Choice != Instance.MenuList.Count);
