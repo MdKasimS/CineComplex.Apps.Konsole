@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Views.CineplexClient.Forms;
 using CineComplex.Views.AdminClient.ManagerViews;
+using CineComplex.ViewModels.AdminViewModels.FormsViewModels;
 
 namespace CineComplex.Views.AdminClient.Forms
 {
@@ -60,14 +61,14 @@ namespace CineComplex.Views.AdminClient.Forms
                 }
 
 
-                AddressFormView.Instance.View();
+                //AddressFormView.Instance.View();
                 Console.Write("Enter Your Choice : ");
 
                 int.TryParse(Console.ReadLine(), out _choice);
                 switch (Choice)
                 {
                     case 1:
-                        SignUpFormView.Instance.View();
+                        await SignUpFormView.Instance.View();
                         break;
 
                     case 2:
@@ -98,10 +99,12 @@ namespace CineComplex.Views.AdminClient.Forms
 
         public void ShowFormData()
         {
-            Console.WriteLine($"Entered Name : {SignUpFormViewModel.Instance.UserName}");
-            Console.WriteLine($"Entered Email : {SignUpFormViewModel.Instance.Email}");
-            Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
-            Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
+            Console.WriteLine($"Step 1 : {RegisterCineplexFormViewModel.Instance.IsStep1}");
+            Console.WriteLine($"Step 2 : {RegisterCineplexFormViewModel.Instance.IsStep2}");
+            Console.WriteLine($"Step 3 : {RegisterCineplexFormViewModel.Instance.IsStep3}");
+            Console.WriteLine($"Step 4 : {RegisterCineplexFormViewModel.Instance.IsStep4}");
+            Console.WriteLine($"Step 5 : {RegisterCineplexFormViewModel.Instance.IsStep5}");
+            Console.WriteLine($"Step 6 : {RegisterCineplexFormViewModel.Instance.IsStep6}");
         }
     }
 }
