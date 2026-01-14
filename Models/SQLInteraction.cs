@@ -12,18 +12,8 @@ namespace CineComplex.Models
         public static CineComplexDb Db { get; set; }
         public SQLInteraction()
         {
-
-            //Movies = new Dictionary<int,Movie>();
-            //Theatres = new Dictionary<int,Theatre>();
-            //Customers = new Dictionary<int,Customer>();
-            //Logins = new Dictionary<int,Credential>();
-            //Shows = new Dictionary<int,Show>();
-            //Bookings = new Dictionary<int,Booking>();
-
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
-
-           
 
             var connection = new SqliteConnection($"Data Source={dbPath}");
             try
