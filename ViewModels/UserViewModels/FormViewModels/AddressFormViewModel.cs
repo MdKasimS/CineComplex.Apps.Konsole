@@ -35,8 +35,8 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newAddress.Country = Country;
             _newAddress.OtherDetails = OtherDetails;
             _newAddress.PinCode = PinCode;
-            _newAddress.AccountProfile = Credential.Instance.LoggedInUser.AccountProfile;
-            _newAddress.AccountProfileId = Credential.Instance.LoggedInUser.AccountProfile.Id;
+            _newAddress.AccountProfile = Credential.Instance.LoggedInUser.UserProfile;
+            _newAddress.AccountProfileId = Credential.Instance.LoggedInUser.UserProfile.Id;
             await Address.CreateNewAddress(_newAddress);
         }
 

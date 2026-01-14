@@ -64,7 +64,7 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasIndex(e => e.Contact).IsUnique();
 
-                entity.HasOne(e => e.AccountProfile)
+                entity.HasOne(e => e.UserProfile)
                   .WithOne(up => up.UserAccount)
                   .HasForeignKey<User>(up => up.Id)
                   .OnDelete(DeleteBehavior.Cascade);
@@ -77,7 +77,7 @@ namespace CineComplex.Classes.SQL
 
                 //one-to-one with User
                 entity.HasOne(up => up.UserAccount)
-                      .WithOne(u => u.AccountProfile)
+                      .WithOne(u => u.UserProfile)
                       .HasForeignKey<UserProfile>(up => up.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
 

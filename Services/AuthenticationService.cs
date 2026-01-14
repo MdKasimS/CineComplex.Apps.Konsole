@@ -38,7 +38,7 @@ namespace CineComplex.Services
                                 await SessionService.LogSession(auth);
 
                                 Credential.Instance.LoggedInUser = User.GetUserByEmailId(Credential.Instance.LoginId);
-                                Credential.Instance.LoggedInUser.AccountProfile = UserProfile.GetUserProfileByUserId(Credential.Instance.LoggedInUser.Id);
+                                Credential.Instance.LoggedInUser.UserProfile = UserProfile.GetUserProfileByUserId(Credential.Instance.LoggedInUser.Id);
                                 
                                 return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged In..."); //false;
                             }

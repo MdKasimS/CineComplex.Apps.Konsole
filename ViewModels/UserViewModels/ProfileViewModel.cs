@@ -34,7 +34,7 @@ namespace CineComplex.ViewModels.UserViewModels
             {
                 AddressesOfUser = new ObservableCollection<Address>();
 
-                foreach (Address address in SQLInteraction.Db.Addresses.Where(ad => ad.AccountProfileId == Credential.Instance.LoggedInUser.AccountProfileId))
+                foreach (Address address in SQLInteraction.Db.Addresses.Where(ad => ad.AccountProfileId == Credential.Instance.LoggedInUser.UserProfileId))
                 {
                     AddressesOfUser.Add(address);
                 }
@@ -44,7 +44,7 @@ namespace CineComplex.ViewModels.UserViewModels
             {
                 BankAccountsOfUser = new ObservableCollection<BankAccount>();
 
-                foreach (BankAccount account in SQLInteraction.Db.BankAccounts.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.AccountProfileId).ToList())
+                foreach (BankAccount account in SQLInteraction.Db.BankAccounts.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.UserProfileId).ToList())
                 {
                     BankAccountsOfUser.Add(account);
                 }
