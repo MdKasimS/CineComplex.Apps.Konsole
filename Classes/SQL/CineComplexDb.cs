@@ -1,4 +1,4 @@
-﻿using CineComplex.Models;
+using CineComplex.Models;
 using CineComplex.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -32,7 +32,7 @@ namespace CineComplex.Classes.SQL
         public DbSet<Session> Sessions { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<CinePlex> Cineplexes { get; set; }
+        public DbSet<Theatre> Theatres { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -183,7 +183,7 @@ namespace CineComplex.Classes.SQL
             });
 
             // Configuring CinePlex entity
-            modelBuilder.Entity<CinePlex>(entity =>
+            modelBuilder.Entity<Theatre>(entity =>
             {
                 // Primary Key
                 entity.HasKey(e => e.Id);
@@ -197,53 +197,13 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.NumberOfTheatres).IsRequired();
 
                 // One-to-one relationship with UserProfile
-                entity.HasOne(e => e.AccountProfile) 
-                      .WithMany(up => up.CinePlexes)
+                entity.HasOne(e => e.AccountProfile)
+                      .WithMany(up => up.Multiplexes)
                       .HasForeignKey(e => e.AccountProfileId);
-                      
+
             });
+
             
-            // Cineplex -> Theatre (1-to-Many)
-            modelBuilder.Entity<CinePlex>()
-                        .HasMany(c => c.Theatres)
-                        .WithOne(t => t.CineComplexOfTheatre)
-                        .HasForeignKey(t => t.Id)
-                        .OnDelete(DeleteBehavior.Cascade);
-
-            // Theatre -> Seat (1-to-Many)
-            modelBuilder.Entity<Theatre>()
-                        .HasMany(t => t.SeatsInTheatre)
-                        .WithOne(s => s.CineComplexTheatre)
-                        .HasForeignKey(s => s.TheatreId)
-                        .OnDelete(DeleteBehavior.Cascade);
-
-            // Theatre -> Show (1-to-Many)
-            modelBuilder.Entity<Theatre>()
-                        .HasMany(t => t.AllShowsOfThisTheatre)
-                        .WithOne(s => s.HostingTheatre)
-                        .HasForeignKey(s => s.TheatreId)
-                        .OnDelete(DeleteBehavior.Cascade);
-
-            // Movie -> Show (1-to-Many)
-            modelBuilder.Entity<Movie>()
-                        .HasMany(m => m.AllShows)
-                        .WithOne(s => s.MovieOfTheShow)
-                        .HasForeignKey(s => s.MovieId)
-                        .OnDelete(DeleteBehavior.Cascade);
-
-            // Show -> Ticket (1-to-Many)
-            modelBuilder.Entity<Show>()
-                        .HasMany(s => s.TicketsOfTheShow)
-                        .WithOne(t => t.ShowBooked)
-                        .HasForeignKey(t => t.ShowId)
-                        .OnDelete(DeleteBehavior.Cascade);
-
-            // Seat -> Ticket (1-to-1)
-            modelBuilder.Entity<Seat>()
-                        .HasOne(s => s.TicketForThisSeat)
-                        .WithOne(t => t.SeatBooked)
-                        .HasForeignKey<Ticket>(t => t.SeatId)
-                        .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

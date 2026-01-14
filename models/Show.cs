@@ -28,10 +28,10 @@ namespace CineComplex.Models
         public decimal SilverSeatRate { get ; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get ; set; }
-        public Movie MovieOfTheShow { get; set; }
+        public Movie ShowMovie { get; set; }
         public int MovieId { get ; set; }// Foreign Key
-        public Theatre HostingTheatre { get; set; }
-        public int TheatreId { get ; set; }// Foreign Key
+        public Auditorium HostingAuditorium { get; set; }
+        public int AuditoriumId { get ; set; }// Foreign Key
         public ObservableCollection<Ticket> TicketsOfTheShow { get; set; }
 
         //TODO: Move this method to respective places
@@ -39,7 +39,7 @@ namespace CineComplex.Models
         {
             Console.WriteLine($"Show ID : {Id}");
             Console.WriteLine($"Movie ID : {MovieId}");
-            Console.WriteLine($"Theatre ID : {TheatreId}");
+            Console.WriteLine($"Theatre ID : {AuditoriumId}");
             Console.WriteLine($"Platinum Seat Rate : {PlatinumSeatRate}");
             Console.WriteLine($"Gold Seat Rate : {GoldSeatRate}");
             Console.WriteLine($"Silver Seat Rate : {SilverSeatRate}");

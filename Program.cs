@@ -6,8 +6,6 @@ using CineComplex.Models;
 
 namespace CineComplex
 {
-
-
     internal class Program
     {
         [DllImport("user32.dll")]
@@ -41,7 +39,7 @@ namespace CineComplex
 
             SQLInteraction.Instance.Init();
             IView app = HomeView.Instance;
-            //IView app = ManageCineplexView.Instance;
+
             app.View();
 
         }

@@ -17,6 +17,10 @@ namespace CineComplex.Views
             get;
             set;
         }
+
+        /// <summary>
+        /// This is for user to select which type of login they want to perform
+        /// </summary>
         public void LoadMenuList()
         {
             HomeView.Instance.MenuList = new List<string>() {
@@ -27,6 +31,9 @@ namespace CineComplex.Views
             };
         }
 
+        /// <summary>
+        /// This is for user to select which type of login they want to perform
+        /// </summary>
         public async Task View()
         {
             HomeView.Instance.LoadMenuList();

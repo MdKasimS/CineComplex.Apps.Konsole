@@ -13,7 +13,7 @@ namespace CineComplex.Models
         public string Language { get; set; }
         public double Duration { get ; set; }
         public string Story { get; set; }
-        public ObservableCollection<Show> AllShows { get; set; }
+        public ObservableCollection<Show> MovieShows { get; set; }
 
     }
 }

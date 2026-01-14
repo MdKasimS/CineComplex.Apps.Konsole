@@ -12,6 +12,10 @@ namespace CineComplex.Views
             get;
             set;
         }
+
+        /// <summary>
+        /// This will be shown to all kinds of users - user/admin/partner
+        /// </summary>
         public void LoadMenuList()
         {
             StartView.Instance.MenuList = new List<string>() {
@@ -23,6 +27,9 @@ namespace CineComplex.Views
             };
         }
 
+        /// <summary>
+        /// This will be shown to all kinds of users - user/admin/partner
+        /// </summary>
         public async Task View()
         {
             StartView.Instance.LoadMenuList();

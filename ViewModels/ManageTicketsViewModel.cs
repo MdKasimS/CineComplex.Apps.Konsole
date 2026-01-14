@@ -14,7 +14,6 @@ namespace CineComplex.ViewModels
             Console.Clear();
             Console.WriteLine("I will back...");
             Console.ReadLine();
-
         }
 
 
