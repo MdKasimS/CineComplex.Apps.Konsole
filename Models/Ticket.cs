@@ -20,7 +20,7 @@ namespace CineComplex.Models
     public class Ticket
     {
         public int Id { get; set; }
-        public TicketStatus StatusOfTciket { get; set; }
+        public TicketStatus Status { get; set; }
         public DateTime PurchaseDate { get; set; }
         public Show ShowBooked { get; set; }
         public int ShowId { get; set; }// Foreign Key
