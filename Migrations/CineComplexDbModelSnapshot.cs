@@ -73,6 +73,28 @@ namespace CineComplex.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("CineComplex.Models.Auditorium", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AuditoriumId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TheatreId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TheatreId");
+
+                    b.ToTable("Auditorium");
+                });
+
             modelBuilder.Entity("CineComplex.Models.Auth", b =>
                 {
                     b.Property<int>("UserId")
@@ -132,47 +154,33 @@ namespace CineComplex.Migrations
                     b.ToTable("BankAccounts");
                 });
 
-            modelBuilder.Entity("CineComplex.Models.CinePlex", b =>
+            modelBuilder.Entity("CineComplex.Models.CineComplex.Models.Seat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AccountProfileId")
+                    b.Property<int>("AuditoriumId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CineplexName")
+                    b.Property<string>("ColumnNum")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Contact")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("NumberOfTheatres")
+                    b.Property<int>("RowNum")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("OperatorName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                    b.Property<int>("SeatAvailability")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("TypeOfSeat")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountProfileId");
+                    b.HasIndex("AuditoriumId");
 
-                    b.ToTable("Cineplexes");
+                    b.ToTable("Seat");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Movie", b =>
@@ -217,35 +225,6 @@ namespace CineComplex.Migrations
                     b.ToTable("Movie");
                 });
 
-            modelBuilder.Entity("CineComplex.Models.Seat", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ColumnNum")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("RowNum")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("SeatAvailability")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TheatreId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TypeOfSeat")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TheatreId");
-
-                    b.ToTable("Seat");
-                });
-
             modelBuilder.Entity("CineComplex.Models.Session", b =>
                 {
                     b.Property<int>("Id")
@@ -279,6 +258,9 @@ namespace CineComplex.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("AuditoriumId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
@@ -297,14 +279,11 @@ namespace CineComplex.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TheatreId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("AuditoriumId");
 
-                    b.HasIndex("TheatreId");
+                    b.HasIndex("MovieId");
 
                     b.ToTable("Show");
                 });
@@ -312,25 +291,44 @@ namespace CineComplex.Migrations
             modelBuilder.Entity("CineComplex.Models.Theatre", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Capacity")
+                    b.Property<int>("AccountProfileId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CinePlexId")
+                    b.Property<string>("CineplexName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Contact")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("NumberOfTheatres")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TheatreNumber")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("OperatorName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
 
-                    b.Property<int?>("UserProfileId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserProfileId");
+                    b.HasIndex("AccountProfileId");
 
-                    b.ToTable("Theatre");
+                    b.ToTable("Theatres");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Ticket", b =>
@@ -348,13 +346,12 @@ namespace CineComplex.Migrations
                     b.Property<int>("ShowId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("StatusOfTciket")
+                    b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SeatId")
-                        .IsUnique();
+                    b.HasIndex("SeatId");
 
                     b.HasIndex("ShowId");
 
@@ -367,9 +364,6 @@ namespace CineComplex.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AccountProfileId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Contact")
                         .IsRequired()
                         .HasMaxLength(15)
@@ -379,6 +373,12 @@ namespace CineComplex.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UserProfileId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -424,6 +424,17 @@ namespace CineComplex.Migrations
                     b.Navigation("AccountProfile");
                 });
 
+            modelBuilder.Entity("CineComplex.Models.Auditorium", b =>
+                {
+                    b.HasOne("CineComplex.Models.Theatre", "CineComplexTheatre")
+                        .WithMany("Auditoriums")
+                        .HasForeignKey("TheatreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CineComplexTheatre");
+                });
+
             modelBuilder.Entity("CineComplex.Models.BankAccount", b =>
                 {
                     b.HasOne("CineComplex.Models.UserProfile", "AccountProfile")
@@ -435,26 +446,15 @@ namespace CineComplex.Migrations
                     b.Navigation("AccountProfile");
                 });
 
-            modelBuilder.Entity("CineComplex.Models.CinePlex", b =>
+            modelBuilder.Entity("CineComplex.Models.CineComplex.Models.Seat", b =>
                 {
-                    b.HasOne("CineComplex.Models.UserProfile", "AccountProfile")
-                        .WithMany("CinePlexes")
-                        .HasForeignKey("AccountProfileId")
+                    b.HasOne("CineComplex.Models.Auditorium", "AuditoriumOfTheatre")
+                        .WithMany("SeatsInAudi")
+                        .HasForeignKey("AuditoriumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AccountProfile");
-                });
-
-            modelBuilder.Entity("CineComplex.Models.Seat", b =>
-                {
-                    b.HasOne("CineComplex.Models.Theatre", "CineComplexTheatre")
-                        .WithMany("SeatsInTheatre")
-                        .HasForeignKey("TheatreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CineComplexTheatre");
+                    b.Navigation("AuditoriumOfTheatre");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Session", b =>
@@ -470,43 +470,39 @@ namespace CineComplex.Migrations
 
             modelBuilder.Entity("CineComplex.Models.Show", b =>
                 {
-                    b.HasOne("CineComplex.Models.Movie", "MovieOfTheShow")
-                        .WithMany("AllShows")
+                    b.HasOne("CineComplex.Models.Auditorium", "HostingAuditorium")
+                        .WithMany("AllShowsOfThisTheatre")
+                        .HasForeignKey("AuditoriumId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CineComplex.Models.Movie", "ShowMovie")
+                        .WithMany("MovieShows")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CineComplex.Models.Theatre", "HostingTheatre")
-                        .WithMany("AllShowsOfThisTheatre")
-                        .HasForeignKey("TheatreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("HostingAuditorium");
 
-                    b.Navigation("HostingTheatre");
-
-                    b.Navigation("MovieOfTheShow");
+                    b.Navigation("ShowMovie");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Theatre", b =>
                 {
-                    b.HasOne("CineComplex.Models.CinePlex", "CineComplexOfTheatre")
-                        .WithMany("Theatres")
-                        .HasForeignKey("Id")
+                    b.HasOne("CineComplex.Models.UserProfile", "AccountProfile")
+                        .WithMany("Multiplexes")
+                        .HasForeignKey("AccountProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CineComplex.Models.UserProfile", null)
-                        .WithMany("TheatresInCineplex")
-                        .HasForeignKey("UserProfileId");
-
-                    b.Navigation("CineComplexOfTheatre");
+                    b.Navigation("AccountProfile");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Ticket", b =>
                 {
-                    b.HasOne("CineComplex.Models.Seat", "SeatBooked")
-                        .WithOne("TicketForThisSeat")
-                        .HasForeignKey("CineComplex.Models.Ticket", "SeatId")
+                    b.HasOne("CineComplex.Models.CineComplex.Models.Seat", "SeatBooked")
+                        .WithMany("Tickets")
+                        .HasForeignKey("SeatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -524,7 +520,7 @@ namespace CineComplex.Migrations
             modelBuilder.Entity("CineComplex.Models.UserProfile", b =>
                 {
                     b.HasOne("CineComplex.Models.User", "UserAccount")
-                        .WithOne("AccountProfile")
+                        .WithOne("UserProfile")
                         .HasForeignKey("CineComplex.Models.UserProfile", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -532,20 +528,21 @@ namespace CineComplex.Migrations
                     b.Navigation("UserAccount");
                 });
 
-            modelBuilder.Entity("CineComplex.Models.CinePlex", b =>
+            modelBuilder.Entity("CineComplex.Models.Auditorium", b =>
                 {
-                    b.Navigation("Theatres");
+                    b.Navigation("AllShowsOfThisTheatre");
+
+                    b.Navigation("SeatsInAudi");
+                });
+
+            modelBuilder.Entity("CineComplex.Models.CineComplex.Models.Seat", b =>
+                {
+                    b.Navigation("Tickets");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Movie", b =>
                 {
-                    b.Navigation("AllShows");
-                });
-
-            modelBuilder.Entity("CineComplex.Models.Seat", b =>
-                {
-                    b.Navigation("TicketForThisSeat")
-                        .IsRequired();
+                    b.Navigation("MovieShows");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Show", b =>
@@ -555,14 +552,12 @@ namespace CineComplex.Migrations
 
             modelBuilder.Entity("CineComplex.Models.Theatre", b =>
                 {
-                    b.Navigation("AllShowsOfThisTheatre");
-
-                    b.Navigation("SeatsInTheatre");
+                    b.Navigation("Auditoriums");
                 });
 
             modelBuilder.Entity("CineComplex.Models.User", b =>
                 {
-                    b.Navigation("AccountProfile")
+                    b.Navigation("UserProfile")
                         .IsRequired();
                 });
 
@@ -572,9 +567,7 @@ namespace CineComplex.Migrations
 
                     b.Navigation("BankDetails");
 
-                    b.Navigation("CinePlexes");
-
-                    b.Navigation("TheatresInCineplex");
+                    b.Navigation("Multiplexes");
                 });
 #pragma warning restore 612, 618
         }
