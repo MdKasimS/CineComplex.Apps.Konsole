@@ -55,7 +55,8 @@ namespace CineComplex.Classes.SQL
             //one-to-one with UserProfile
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(e => e.Id); // Primary Key
+                // Primary Key
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(50); // Name is required, max length 50 
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(50); // Email is required, max length 50 
                 entity.Property(e => e.Contact).IsRequired().HasMaxLength(15); // Contact is required, max length 15
@@ -64,6 +65,11 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasIndex(e => e.Contact).IsUnique();
 
+                // Enum mapping (AccountStatus will be stored as int by default)
+                entity.Property(e => e.Status)
+                      .IsRequired();
+
+                // Relationships
                 entity.HasOne(e => e.UserProfile)
                   .WithOne(up => up.UserAccount)
                   .HasForeignKey<User>(up => up.Id)
@@ -203,7 +209,7 @@ namespace CineComplex.Classes.SQL
 
             });
 
-            
+
         }
 
     }
