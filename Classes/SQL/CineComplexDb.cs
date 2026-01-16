@@ -34,6 +34,7 @@ namespace CineComplex.Classes.SQL
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Theatre> Theatres { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

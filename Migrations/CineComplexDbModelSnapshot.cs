@@ -222,7 +222,7 @@ namespace CineComplex.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Session", b =>
