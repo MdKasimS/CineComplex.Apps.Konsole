@@ -1,0 +1,1 @@
+﻿# Pages in CineComplex world are forms which shows data. They can make only Read querries to database.
