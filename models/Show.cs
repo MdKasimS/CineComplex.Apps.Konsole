@@ -33,6 +33,7 @@ namespace CineComplex.Models
         public Auditorium HostingAuditorium { get; set; }
         public int AuditoriumId { get ; set; }// Foreign Key
         public ObservableCollection<Ticket> TicketsOfTheShow { get; set; }
+        public ObservableCollection<Booking> Bookings { get; set; }
 
         //TODO: Move this method to respective places
         public void DisplayShowDetails()

@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Models
+namespace CineComplex.Interfaces
 {
-    public class Transaction
+    public interface IPage
     {
-        public int Id { get; set; }
-
-        public int Status { get; set; }
-
     }
 }

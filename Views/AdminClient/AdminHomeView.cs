@@ -20,13 +20,14 @@ namespace CineComplex.Views.AdminClient
         {
             //TODO: Please added check for loading list again and again like in UserClient
             Instance.MenuList = new List<string>() {
-                "1. See Shows",
-                "2. Manage Shows",
-                "3. Manage Users",
-                "4. Manage Admins",
-                "5. Manage Tickets",
-                "6. Manage Movies",
-                "7. Manage CineComplexes",
+                "1. Manage Shows",
+                "2. Manage Movies",
+                "3. Manage Tickets",
+                "4. Manage Bills",
+                "5. Manage Users",
+                "6. Manage CineComplexes",
+                "7. Manage Bookings",
+                "7. Manage Admins",
                 "8. Exit",
             };
         }
@@ -67,9 +68,9 @@ namespace CineComplex.Views.AdminClient
                         //Manage show view
                         break;
 
-                    case 3:
+                    case 5:
                         //Manage User view
-                        await UserManagementView.Instance.View();
+                        await ManageUsersView.Instance.View();
                         break;
 
                     case 7:
