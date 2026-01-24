@@ -69,7 +69,7 @@ namespace CineComplex.Views.AdminClient
 
                     case 3:
                         //Manage User view
-                        await UserManagementView.Instance.View();
+                        await ManageUsersView.Instance.View();
                         break;
 
                     case 7:
