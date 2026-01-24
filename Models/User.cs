@@ -5,6 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 namespace CineComplex.Models
 {
+    public enum AccountStatus
+    {
+        Active,
+        Disabled,
+        Deleted
+    }
+
     public class User
     {
         //TODO: Add account status control flag - Active, Disabled, Deleted
@@ -20,7 +27,8 @@ namespace CineComplex.Models
         public string Contact { get; set; }
         public UserProfile UserProfile { get; set; }
         public int UserProfileId { get; set; }
-       
+        public AccountStatus Status { get; set; } = AccountStatus.Active;
+
         public static async Task CreateNewUser(User _newUser)
         {
             await Task.Run(() =>

@@ -1,6 +1,7 @@
 ﻿using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.ViewModels.CineplexViewModels.FormViewModels;
 using CineComplex.ViewModels.FormViewModels;
 using System;
 using System.Collections.Generic;

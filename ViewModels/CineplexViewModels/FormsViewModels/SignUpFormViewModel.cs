@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.ViewModels.CineplexViewModels
+namespace CineComplex.ViewModels.CineplexViewModels.FormViewModels
 {
     public class SignUpFormViewModel : AViewModelBase<SignUpFormViewModel>, IViewModel
     {
@@ -19,6 +19,7 @@ namespace CineComplex.ViewModels.CineplexViewModels
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+        public Result<bool> SignUpResult { get; set; }
 
         #endregion
 
@@ -32,30 +33,15 @@ namespace CineComplex.ViewModels.CineplexViewModels
             _newUser.Email = Email;
             _newUser.Contact = Contact;
 
-            Result<bool> isValidRegistration = IsValidRegistration(_newUser);
-            if (isValidRegistration.IsSuccessful)
+            SignUpResult = IsValidRegistration(_newUser);
+            if (SignUpResult.IsSuccessful)
             {
                 await User.CreateNewUser(_newUser);
-                
-                isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
-                return isValidRegistration;
+
+                SignUpResult.Message = "Cineplex Client Created Successfully. Press Any Key To Continue...";
+                return SignUpResult;
             }
-            return isValidRegistration;
-        }
-
-        private Result<bool> IsValidRegistration(User _newUser)
-        {
-            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
-            
-            if (isValidRegistration.IsSuccessful)
-            {
-                isValidRegistration.Value = true;
-                isValidRegistration.IsSuccessful = true;
-                return isValidRegistration;
-            }
-
-            return isValidRegistration;
-
+            return SignUpResult;
         }
 
         public void ResetFormCommand()
@@ -68,7 +54,19 @@ namespace CineComplex.ViewModels.CineplexViewModels
         #endregion
 
         #region Methods
+        private Result<bool> IsValidRegistration(User _newUser)
+        {
+            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
 
+            if (isValidRegistration.IsSuccessful)
+            {
+                isValidRegistration.Value = true;
+                isValidRegistration.IsSuccessful = true;
+                return isValidRegistration;
+            }
+
+            return isValidRegistration;
+        }
 
         #endregion
     }

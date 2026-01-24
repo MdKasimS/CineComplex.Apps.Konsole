@@ -1,6 +1,7 @@
 ﻿using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.ViewModels.AdminViewModels.FormViewModels;
 using CineComplex.ViewModels.FormViewModels;
 
 
@@ -74,13 +75,14 @@ namespace CineComplex.Views.AdminClient.Forms
 
                     case 5:
 
-                        Result<bool> result = await SignUpFormViewModel.Instance.CreateUserCommand();
-                        Console.Write(result.Message);
+                        SignUpFormViewModel.Instance.CreateUserCommand().Wait();
+                        Console.Write(SignUpFormViewModel.Instance.SignUpResult.Message);
                         Console.ReadKey();
 
-                        if (result.IsSuccessful)
+                        if (SignUpFormViewModel.Instance.SignUpResult.IsSuccessful)
                         {
-                            //SignUpFormViewModel.Instance.ResetFormCommand();
+                            SignUpFormViewModel.Instance.ResetFormCommand();
+                            return;
                         }
 
                         break;

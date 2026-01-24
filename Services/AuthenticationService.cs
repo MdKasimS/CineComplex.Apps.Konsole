@@ -64,7 +64,7 @@ namespace CineComplex.Services
 
             String theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                                    + "@"
-                                   + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
+                                   + @"((([\-\w]+\.)+[a-zA-Z]{2,10})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\Z";
             if (Regex.IsMatch(email, theEmailPattern))
                 return new Result<bool>(true, true, "");
             else
