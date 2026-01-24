@@ -15,6 +15,9 @@ namespace CineComplex.Models
         public User UserAccount { get; set; } = null!;
         public ObservableCollection<Address> AddressDetails { get; set; }
         public ObservableCollection<BankAccount> BankDetails { get; set; }
+        public ObservableCollection<Ticket> Tickets { get; set; }
+        public ObservableCollection<Booking> Bookings { get; set; }
+        public ObservableCollection<Payment> Payments { get; set; }
 
         /* Need Attention!
             If user doesn't own any theatre, this collection will be empty

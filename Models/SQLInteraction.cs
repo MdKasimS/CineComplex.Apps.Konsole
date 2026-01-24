@@ -88,10 +88,6 @@ namespace CineComplex.Models
             // Exception Messsage - "Movie details can't be null."
         }
        
-        public void AddCustomers(Customer obj)
-        {
-
-        }
         public void AddShows(Show obj)
         {
 
@@ -105,10 +101,6 @@ namespace CineComplex.Models
 
         }
         
-        public void DeleteCustomers(Customer obj)
-        {
-
-        }
         public void DeleteShows(Show obj)
         {
 
@@ -121,11 +113,7 @@ namespace CineComplex.Models
         {
 
         }
-       
-        public void UpdateCustomers(Customer obj)
-        {
-
-        }
+      
         public void UpdateShows(Show obj)
         {
 
@@ -138,11 +126,7 @@ namespace CineComplex.Models
         {
 
         }
-       
-        public void SearchCustomers(Customer obj)
-        {
-
-        }
+      
         public void SearchShows(Show obj)
         {
 

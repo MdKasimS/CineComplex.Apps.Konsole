@@ -9,12 +9,11 @@ namespace CineComplex.Models
 {
     public enum TicketStatus
     {
-        Active,
-        CustomerCancelled,
+        Issued, 
+        Cancelled, 
+        CheckedIn, 
         Expired,
-        Redeemed,
-        CinePlexCancelled
-           
+        Refunded
     }
 
     public class Ticket
@@ -22,10 +21,13 @@ namespace CineComplex.Models
         public int Id { get; set; }
         public TicketStatus Status { get; set; }
         public DateTime PurchaseDate { get; set; }
+        public Booking Booking { get; set; }
+        public int BookingId { get; set; }
         public Show ShowBooked { get; set; }
         public int ShowId { get; set; }// Foreign Key
         public Seat SeatBooked { get; set; }
         public int SeatId { get; set; }// Foreign Key
-
+        public UserProfile User { get; set; }
+        public int UserProfileId { get; set; }
     }
 }
