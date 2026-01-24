@@ -4,6 +4,7 @@ using CineComplex.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SharpCompress.Common;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -36,10 +37,13 @@ namespace CineComplex.Classes.SQL
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Theatre> Theatres { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Seat> Seats { get; set; }
-        public DbSet<Seat> Shows { get; set; }
+        public DbSet<Show> Shows { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -417,7 +421,6 @@ namespace CineComplex.Classes.SQL
                       .HasForeignKey<Payment>(p => p.BookingId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
-
 
         }
 
