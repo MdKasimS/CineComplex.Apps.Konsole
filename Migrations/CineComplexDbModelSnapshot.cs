@@ -89,7 +89,7 @@ namespace CineComplex.Migrations
 
                     b.HasIndex("TheatreId");
 
-                    b.ToTable("Auditorium");
+                    b.ToTable("Auditoriums");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Auth", b =>
@@ -176,7 +176,7 @@ namespace CineComplex.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("CineComplex.Models.CineComplex.Models.Seat", b =>
@@ -206,7 +206,7 @@ namespace CineComplex.Migrations
                     b.HasIndex("SeatCode", "AuditoriumId")
                         .IsUnique();
 
-                    b.ToTable("Seat");
+                    b.ToTable("Seats");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Movie", b =>
@@ -289,7 +289,7 @@ namespace CineComplex.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Session", b =>
@@ -352,7 +352,7 @@ namespace CineComplex.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("Show");
+                    b.ToTable("Shows");
                 });
 
             modelBuilder.Entity("CineComplex.Models.Theatre", b =>
