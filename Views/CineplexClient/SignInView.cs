@@ -3,8 +3,8 @@ using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.CineplexClient;
-using CineComplex.Views.AdminClient;
-using CineComplex.Views.AdminClient.Forms;
+using CineComplex.Views.CineplexClient.Forms;
+
 
 namespace CineComplex.Views.CineplexClient
 {

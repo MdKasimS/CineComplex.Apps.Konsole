@@ -76,7 +76,7 @@ namespace CineComplex.Views.UserClient.Forms
 
                     case 5:
 
-                        SignUpFormViewModel.Instance.AddUserCommand().Wait();
+                        SignUpFormViewModel.Instance.CreateUserCommand().Wait();
                         Console.Write(SignUpFormViewModel.Instance.SignUpResult.Message);
                         Console.ReadKey();
 

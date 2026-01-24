@@ -2,12 +2,6 @@
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineComplex.ViewModels.AdminViewModels.FormViewModels
 {
@@ -15,10 +9,11 @@ namespace CineComplex.ViewModels.AdminViewModels.FormViewModels
     {
         #region Properties
 
-        public string UserName{get;  set ; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+        public Result<bool> SignUpResult { get; set; }
 
         #endregion
 
@@ -34,22 +29,33 @@ namespace CineComplex.ViewModels.AdminViewModels.FormViewModels
                 _newUser.Email = Email;
                 _newUser.Contact = Contact;
 
-                Result<bool> isValidRegistration = IsValidRegistration(_newUser);
-                if (isValidRegistration.IsSuccessful)
+                SignUpResult = IsValidRegistration(_newUser);
+                if (SignUpResult.IsSuccessful)
                 {
                     await User.CreateNewUser(_newUser);
 
-                    isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
-                    return isValidRegistration;
+                    SignUpResult.Message = "Admin Created Successfully. Press Any Key To Continue...";
+                    return SignUpResult;
                 }
-                return isValidRegistration;
+                return SignUpResult;
             });
         }
 
+        public void ResetFormCommand()
+        {
+            SignUpFormViewModel.Instance.UserName = "";
+            SignUpFormViewModel.Instance.Email = "";
+            SignUpFormViewModel.Instance.Contact = "";
+            SignUpFormViewModel.Instance.Password = "";
+        }
+        
+        #endregion
+
+        #region Methods
         private Result<bool> IsValidRegistration(User _newUser)
         {
             Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
-            
+
             if (isValidRegistration.IsSuccessful)
             {
                 isValidRegistration.Value = true;
@@ -61,18 +67,7 @@ namespace CineComplex.ViewModels.AdminViewModels.FormViewModels
 
         }
 
-        public void ResetFormCommand()
-        {
-            SignUpFormViewModel.Instance.UserName = "";
-            SignUpFormViewModel.Instance.Email = "";
-            SignUpFormViewModel.Instance.Contact = "";
-            SignUpFormViewModel.Instance.Password = "";
-        }
         #endregion
 
-        #region Methods
-
-
-        #endregion
     }
 }
