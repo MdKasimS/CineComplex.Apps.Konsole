@@ -27,8 +27,8 @@ namespace CineComplex.Views.AdminClient
                 "5. Manage Users",
                 "6. Manage CineComplexes",
                 "7. Manage Bookings",
-                "7. Manage Admins",
-                "8. Exit",
+                "8. Manage Admins",
+                "9. Exit",
             };
         }
 
