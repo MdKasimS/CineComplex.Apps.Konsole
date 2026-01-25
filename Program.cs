@@ -24,17 +24,17 @@ namespace CineComplex
 
         private static void Main(string[] args)
         {
-            Console.WindowHeight = 25;
-            Console.WindowWidth = 120;
+            // Console.WindowHeight = 25;
+            // Console.WindowWidth = 120;
 
 
-            Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
-            Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
+            // Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
+            // Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
 
 
-            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
-            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
-            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
+            // DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
+            // DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
+            // DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
 
             SQLInteraction.Instance.Init();
