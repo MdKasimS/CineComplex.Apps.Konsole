@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Classes.Base
+namespace Konsole.Classes.Base
 {
     public abstract class ABaseSingleton<T> where T : class, new()
     {

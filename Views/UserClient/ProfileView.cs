@@ -1,12 +1,13 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.UserViewModels;
-using CineComplex.Views.UserClient.Forms;
-using ConsoleTables;
+﻿using ConsoleTables;
+
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.ViewModels.UserViewModels;
+using Konsole.Views.UserClient.Forms;
 
 
-namespace CineComplex.Views.UserClient
+namespace Konsole.Views.UserClient
 {
     class ProfileView : AViewBase<ProfileView>, IView
     {

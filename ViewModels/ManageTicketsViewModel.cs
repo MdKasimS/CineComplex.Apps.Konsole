@@ -1,8 +1,8 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
 
 
-namespace CineComplex.ViewModels
+namespace Konsole.ViewModels
 {
     public class ManageTicketsViewModel : ABaseSingleton<ManageTicketsViewModel>, IViewModel
     {

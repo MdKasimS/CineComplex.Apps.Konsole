@@ -1,4 +1,4 @@
-namespace CineComplex.Models
+namespace Konsole.Models
 {
     public enum BookingStatus
     {

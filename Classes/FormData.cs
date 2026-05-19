@@ -1,12 +1,13 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Models;
+﻿using Konsole.Classes.Base;
+using Konsole.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Classes
+namespace Konsole.Classes
 {
     public class FormData: ABaseSingleton<FormData>
     {

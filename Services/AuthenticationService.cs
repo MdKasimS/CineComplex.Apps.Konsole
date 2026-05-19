@@ -1,11 +1,13 @@
 ﻿using System.Text.RegularExpressions;
-using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
+
+using Konsole.Classes;
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+
 using Microsoft.IdentityModel.Tokens;
 
-namespace CineComplex.Services
+namespace Konsole.Services
 {
     public class AuthenticationService : AServiceBase<AuthenticationService>, IService
     {

@@ -1,15 +1,18 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.FormViewModels;
+﻿using CineComplex.Models;
+
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.AdminViewModels.FormsViewModels;
+
 using Microsoft.IdentityModel.Tokens;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.UserClient.Forms
+namespace Konsole.Views.UserClient.Forms
 {
     public class ForgotPasswordFormView : AViewBase<ForgotPasswordFormView>, IView
     {

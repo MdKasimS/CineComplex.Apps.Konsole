@@ -1,12 +1,10 @@
-﻿using CineComplex.Models;
-using CineComplex.Classes.Base;
-using CineComplex.Services;
-using CineComplex.ViewModels.FormViewModels;
-using CineComplex.Classes;
-using Microsoft.Identity.Client;
+﻿using Konsole.Classes;
+using Konsole.Services;
+using Konsole.Classes.Base;
+using Konsole.Models;
 
 
-namespace CineComplex.ViewModels.AdminViewModels
+namespace Konsole.ViewModels.AdminViewModels
 {
     public class SignInViewModel : AViewModelBase<SignInViewModel>
     {

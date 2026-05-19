@@ -1,9 +1,10 @@
-﻿using CineComplex.Classes;
-using CineComplex.Services;
+﻿using Konsole.Classes;
+using Konsole.Services;
+
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
-namespace CineComplex.Models
+namespace Konsole.Models
 {
     public enum AccountStatus
     {

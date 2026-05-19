@@ -1,11 +1,13 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+
 using Microsoft.IdentityModel.Tokens;
+
 using System.Collections.ObjectModel;
 
 
-namespace CineComplex.ViewModels.UserViewModels
+namespace Konsole.ViewModels.UserViewModels
 {
     public class ProfileViewModel : AViewModelBase<ProfileViewModel>, IViewModel
     {

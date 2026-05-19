@@ -1,8 +1,7 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
 
-namespace CineComplex.Views.CineplexClient.Manager
+namespace Konsole.Views.CineplexClient.ManagerViews
 {
     public class ManageTicketsView : AViewBase<ManageTicketsView>, IView
     {

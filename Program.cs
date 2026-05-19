@@ -1,10 +1,11 @@
-﻿using CineComplex.Views;
-using System.Runtime.InteropServices;
-using CineComplex.Interfaces;
-using CineComplex.Models;
+﻿using System.Runtime.InteropServices;
+
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.Views;
 
 
-namespace CineComplex
+namespace Konsole
 {
     internal class Program
     {

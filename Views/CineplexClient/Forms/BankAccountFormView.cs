@@ -1,15 +1,18 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.UserViewModels.FormViewModels;
+﻿using CineComplex.Models;
+
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.UserViewModels.FormViewModels;
+
 using Microsoft.IdentityModel.Tokens;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.CineplexClient.Forms
+namespace Konsole.Views.CineplexClient.Forms
 {
     class BankAccountFormView : AViewBase<BankAccountFormView>, IView
     {

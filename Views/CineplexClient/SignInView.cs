@@ -1,12 +1,11 @@
-using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.CineplexClient;
-using CineComplex.Views.CineplexClient.Forms;
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.ViewModels.CineplexViewModels;
+using Konsole.Views.CineplexClient.Forms;
 
 
-namespace CineComplex.Views.CineplexClient
+namespace Konsole.Views.CineplexClient
 {
     public class SignInView : AViewBase<SignInView>, IView
     {

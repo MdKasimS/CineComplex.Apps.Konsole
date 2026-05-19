@@ -1,12 +1,12 @@
-using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.UserClient;
-using CineComplex.Views.UserClient.Forms;
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.ViewModels.UserViewModels;
+using Konsole.Views.UserClient.Forms;
+
 using Microsoft.IdentityModel.Tokens;
 
-namespace CineComplex.Views.UserClient
+namespace Konsole.Views.UserClient
 {
     public class SignInView : AViewBase<SignInView>, IView
     {

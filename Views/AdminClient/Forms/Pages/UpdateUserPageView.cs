@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.AdminClient.Forms.Pages
+namespace Konsole.Views.AdminClient.Forms.Pages
 {
     internal class UpdateUserPageView
     {

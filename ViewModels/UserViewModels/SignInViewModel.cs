@@ -1,12 +1,11 @@
-﻿using CineComplex.Models;
-using CineComplex.Classes.Base;
-using CineComplex.Services;
-using CineComplex.ViewModels.FormViewModels;
-using CineComplex.Classes;
-using CineComplex.Interfaces;
+﻿using Konsole.Interfaces;
+using Konsole.Classes;
+using Konsole.Services;
+using Konsole.Classes.Base;
+using Konsole.Models;
 
 
-namespace CineComplex.ViewModels.UserClient
+namespace Konsole.ViewModels.UserViewModels
 {
     public class SignInViewModel : AViewModelBase<SignInViewModel>, IViewModel
     {
