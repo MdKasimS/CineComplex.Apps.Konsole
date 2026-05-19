@@ -1,6 +1,4 @@
-using CineComplex.Classes.Base;
-
-namespace CineComplex.Models
+namespace Konsole.Models
 {
     public class Credential
     {

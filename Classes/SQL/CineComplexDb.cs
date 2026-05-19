@@ -1,18 +1,12 @@
-using CineComplex.Models;
 using CineComplex.Models.CineComplex.Models;
-using CineComplex.Services;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using SharpCompress.Common;
-using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CineComplex.Classes.SQL
+using Konsole.Models;
+
+using Microsoft.EntityFrameworkCore;
+
+using System.Data.Common;
+
+namespace Konsole.Classes.SQL
 {
     public class CineComplexDb : DbContext
     {

@@ -1,15 +1,8 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels.CineplexViewModels.FormViewModels;
-using CineComplex.ViewModels.FormViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.CineplexViewModels.FormsViewModels;
 
-namespace CineComplex.Views.CineplexClient.Forms
+namespace Konsole.Views.CineplexClient.Forms
 {
     public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {

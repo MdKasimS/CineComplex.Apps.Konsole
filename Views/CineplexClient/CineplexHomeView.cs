@@ -1,8 +1,8 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Views.CineplexClient.Manager;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Views.CineplexClient.ManagerViews;
 
-namespace CineComplex.Views.CineplexClient
+namespace Konsole.Views.CineplexClient
 {
     public class CineplexHomeView : AViewBase<CineplexHomeView>, IView
     {

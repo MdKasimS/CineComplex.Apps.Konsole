@@ -1,14 +1,8 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
 
-namespace CineComplex.Services
+namespace Konsole.Services
 {
     public class SessionService : AServiceBase<SessionService>, IService
     {

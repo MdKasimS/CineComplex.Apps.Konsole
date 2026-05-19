@@ -1,13 +1,14 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.ViewModels.UserViewModels.FormViewModels
+namespace Konsole.ViewModels.UserViewModels.FormViewModels
 {
     public class AddressFormViewModel : AViewModelBase<AddressFormViewModel>, IViewModel
     {

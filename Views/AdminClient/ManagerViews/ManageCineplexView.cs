@@ -1,15 +1,8 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels;
-using CineComplex.Views.AdminClient.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Views.AdminClient.Forms;
 
-namespace CineComplex.Views.AdminClient.ManagerViews
+namespace Konsole.Views.AdminClient.ManagerViews
 {
     public class ManageCineplexView: AViewBase<ManageCineplexView>, IView
     {

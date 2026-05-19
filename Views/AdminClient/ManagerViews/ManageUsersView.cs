@@ -1,15 +1,18 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.Views.UserClient.Forms;
+﻿using CineComplex.Models;
+
 using ConsoleTables;
+
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Views.UserClient.Forms;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.AdminClient.ManagerViews
+namespace Konsole.Views.AdminClient.ManagerViews
 {
     class ManageUsersView : AViewBase<ManageUsersView>, IView
     {
@@ -49,7 +52,7 @@ namespace CineComplex.Views.AdminClient.ManagerViews
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in AdminClient.ManagerViews.ManageUsersView.Instance.MenuList)
+                foreach (string instr in ManageUsersView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -82,7 +85,7 @@ namespace CineComplex.Views.AdminClient.ManagerViews
                 }
 
 
-            } while (Choice != AdminClient.ManagerViews.ManageUsersView.Instance.MenuList.Count);
+            } while (Choice != ManageUsersView.Instance.MenuList.Count);
         }
 
         public void DisplayAllUsers()

@@ -1,9 +1,10 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels.UserViewModels.FormViewModels;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.UserViewModels.FormViewModels;
+
 using Microsoft.IdentityModel.Tokens;
 
-namespace CineComplex.Views.UserClient.Forms
+namespace Konsole.Views.UserClient.Forms
 {
     public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {

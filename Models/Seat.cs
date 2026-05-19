@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Models
 {
+    using Konsole.Models;
+
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;

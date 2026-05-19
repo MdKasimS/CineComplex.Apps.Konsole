@@ -1,11 +1,9 @@
-using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Classes.SQL;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
+using Konsole.Classes.Base;
+using Konsole.Classes.SQL;
 
-namespace CineComplex.Models
+using Microsoft.Data.Sqlite;
+
+namespace Konsole.Models
 {
     public class SQLInteraction : ABaseSingleton<SQLInteraction>
     {

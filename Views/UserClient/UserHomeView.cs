@@ -1,11 +1,12 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.ViewModels.UserClient;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.ViewModels.UserViewModels;
+
 using Microsoft.IdentityModel.Tokens;
 
 
-namespace CineComplex.Views.UserClient
+namespace Konsole.Views.UserClient
 {
     public class UserHomeView : AViewBase<UserHomeView>, IView
     {

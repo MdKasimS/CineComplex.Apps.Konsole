@@ -1,4 +1,4 @@
-namespace CineComplex.Classes.Exceptions
+namespace Konsole.Classes.Exceptions
 {
     public class InvalidLanguageException
     {

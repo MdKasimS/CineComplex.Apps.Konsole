@@ -1,7 +1,7 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
 
-namespace CineComplex.ViewModels.UserViewModels.FormViewModels
+namespace Konsole.ViewModels.UserViewModels.FormViewModels
 {
     public class ForgotPasswordFormViewModel: AViewModelBase<ForgotPasswordFormViewModel>, IViewModel
     {

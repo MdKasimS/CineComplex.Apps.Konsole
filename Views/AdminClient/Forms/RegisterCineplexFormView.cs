@@ -1,18 +1,10 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels.AdminViewModels;
-using CineComplex.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CineComplex.ViewModels.FormViewModels;
-using CineComplex.Views.CineplexClient.Forms;
-using CineComplex.Views.AdminClient.ManagerViews;
-using CineComplex.ViewModels.AdminViewModels.FormsViewModels;
+﻿using Konsole.Views.AdminClient.ManagerViews;
+using Konsole.Interfaces;
+using Konsole.ViewModels.AdminViewModels;
+using Konsole.ViewModels.AdminViewModels.FormsViewModels;
+using Konsole.Classes.Base;
 
-namespace CineComplex.Views.AdminClient.Forms
+namespace Konsole.Views.AdminClient.Forms
 {
     public class RegisterCineplexFormView : AViewBase<RegisterCineplexFormView>, IView
     {

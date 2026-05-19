@@ -1,15 +1,9 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels.AdminViewModels.FormViewModels;
-using CineComplex.ViewModels.FormViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes;
+using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.AdminViewModels.FormsViewModels;
 
-namespace CineComplex.Views.AdminClient.FormViews
+namespace Konsole.Views.AdminClient.Forms
 {
     public class AddressFormView : AViewBase<AddressFormView>, IView
     {

@@ -1,15 +1,9 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels;
-using CineComplex.ViewModels.AdminViewModels;
-using CineComplex.Views.AdminClient.ManagerViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.AdminViewModels;
+using Konsole.Views.AdminClient.ManagerViews;
 
-namespace CineComplex.Views.AdminClient
+namespace Konsole.Views.AdminClient
 {
     public class AdminHomeView : AViewBase<AdminHomeView>, IView
     {

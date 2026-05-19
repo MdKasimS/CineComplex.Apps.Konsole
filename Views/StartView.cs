@@ -1,7 +1,7 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
 
-namespace CineComplex.Views
+namespace Konsole.Views
 {
     public class StartView : AViewBase<StartView>, IView
     {

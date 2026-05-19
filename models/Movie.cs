@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace CineComplex.Models
+namespace Konsole.Models
 {
     public class Movie
     {

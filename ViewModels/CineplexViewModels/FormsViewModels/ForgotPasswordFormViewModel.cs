@@ -1,12 +1,13 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.ViewModels.CineplexViewModels
+namespace Konsole.ViewModels.CineplexViewModels.FormsViewModels
 {
     public class ForgotPasswordFormViewModel: AViewModelBase<ForgotPasswordFormViewModel>, IViewModel
     {

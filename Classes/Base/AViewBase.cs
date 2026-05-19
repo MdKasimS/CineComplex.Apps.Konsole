@@ -1,6 +1,4 @@
-﻿
-
-namespace CineComplex.Classes.Base
+﻿namespace Konsole.Classes.Base
 {
     public abstract class AViewBase<T> : ABaseSingleton<T> where T : AViewBase<T>, new()
     {

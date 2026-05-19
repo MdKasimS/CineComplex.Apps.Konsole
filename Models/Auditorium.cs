@@ -1,7 +1,8 @@
 using CineComplex.Models.CineComplex.Models;
+
 using System.Collections.ObjectModel;
 
-namespace CineComplex.Models
+namespace Konsole.Models
 {
     public class Auditorium
     {

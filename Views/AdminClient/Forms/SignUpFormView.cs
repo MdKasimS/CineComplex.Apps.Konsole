@@ -1,11 +1,9 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.ViewModels.AdminViewModels.FormViewModels;
-using CineComplex.ViewModels.FormViewModels;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.ViewModels.AdminViewModels.FormsViewModels;
 
 
-namespace CineComplex.Views.AdminClient.Forms
+namespace Konsole.Views.AdminClient.Forms
 {
     public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {

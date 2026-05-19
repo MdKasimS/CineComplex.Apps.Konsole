@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Interfaces
+namespace Konsole.Interfaces
 {
     public interface IEntityModel
     {

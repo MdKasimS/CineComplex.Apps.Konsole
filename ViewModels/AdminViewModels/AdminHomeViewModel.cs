@@ -1,15 +1,9 @@
-﻿using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
-using CineComplex.Models;
-using CineComplex.Services;
-using CineComplex.ViewModels.FormViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Konsole.Classes.Base;
+using Konsole.Interfaces;
+using Konsole.Models;
+using Konsole.Services;
 
-namespace CineComplex.ViewModels.AdminViewModels
+namespace Konsole.ViewModels.AdminViewModels
 {
     public class AdminHomeViewModel : AViewModelBase<AdminHomeViewModel>, IViewModel
     {
